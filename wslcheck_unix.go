@@ -16,7 +16,7 @@ func check() (bool, error) {
 	if runt == "linux" {
 		verBytes, err := ioutil.ReadFile(linuxReleaseProc)
 		if err != nil {
-			return nil, err
+			return false, err
 		}
 		if strings.HasSuffix(string(verBytes), "microsoft-standard\n") {
 			return true, nil
