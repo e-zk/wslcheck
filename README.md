@@ -8,7 +8,7 @@ This module works by checking the contents of `/proc/sys/kernel/osrelease`.
 ## Usage
 
 ```console
-go get github.com/e-zk/wslcheck
+$ go get github.com/e-zk/wslcheck
 ```
 
 ```go
@@ -21,7 +21,7 @@ import (
 
 func main() {
 	fmt.Printf("Am I running on WSL?\n")
-	if wslcheck.Check() {
+	if wsl, _ := wslcheck.Check(); wsl == true {
 		fmt.Printf("Yes!\n")
 	} else {
 		fmt.Printf("No!\n")
