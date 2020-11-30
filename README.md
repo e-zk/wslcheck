@@ -16,12 +16,19 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"github.com/e-zk/wslcheck"
 )
 
 func main() {
 	fmt.Printf("Am I running on WSL?\n")
-	if wsl, _ := wslcheck.Check(); wsl == true {
+
+	wsl, err := wslcheck.Check()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if wsl == true {
 		fmt.Printf("Yes!\n")
 	} else {
 		fmt.Printf("No!\n")
