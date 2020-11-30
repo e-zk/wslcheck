@@ -1,4 +1,4 @@
-package example
+package wslcheck_example
 
 import (
 	"fmt"
