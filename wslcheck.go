@@ -1,5 +1,5 @@
 package wslcheck
 
-func Check() bool {
+func Check() (bool, error) {
 	return check()
 }
