@@ -2,8 +2,8 @@ package wslcheck
 
 import (
 	"io/ioutil"
+	"regexp"
 	"runtime"
-	"strings"
 )
 
 const (
@@ -12,13 +12,17 @@ const (
 
 func check() (bool, error) {
 	runt := runtime.GOOS
+	r := regexp.MustCompile(`.*microsoft-standard.*`)
 
 	if runt == "linux" {
 		verBytes, err := ioutil.ReadFile(linuxReleaseProc)
 		if err != nil {
 			return false, err
 		}
-		if strings.HasSuffix(string(verBytes), "microsoft-standard\n") {
+		//if strings.HasSuffix(string(verBytes), "microsoft-standard\n") {
+		//	return true, nil
+		//}
+		if r.Match(verBytes) {
 			return true, nil
 		}
 	}
