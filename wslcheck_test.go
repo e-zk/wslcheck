@@ -3,17 +3,36 @@ package wslcheck_test
 import (
 	"fmt"
 	"github.com/e-zk/wslcheck"
-	"log"
+	"testing"
 )
+
+// Test the version checking regexp
+func TestCheckVer(t *testing.T) {
+	var result bool
+
+	result = wslcheck.CheckVer([]byte("4.2.0-microsoft-standard"))
+	fmt.Println(result)
+
+	result = wslcheck.CheckVer([]byte("4.4.0-19041-Microsoft"))
+	fmt.Println(result)
+
+	result = wslcheck.CheckVer([]byte("5.10.9-0-virt"))
+	fmt.Println(result)
+
+	// Output:
+	// true
+	// true
+	// false
+}
 
 // The simplest possible use of this function
 func ExampleCheck() {
-	fmt.Printf("Am I running on WSL?\n")
+	fmt.Println("Am I running on WSL?")
 
 	wsl, _ := wslcheck.Check()
 	if wsl == true {
-		fmt.Printf("Yes!\n")
+		fmt.Println("Yes!")
 	} else {
-		fmt.Printf("No!\n")
+		fmt.Println("No!")
 	}
 }
