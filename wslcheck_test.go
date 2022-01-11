@@ -2,7 +2,7 @@ package wslcheck_test
 
 import (
 	"fmt"
-	"github.com/e-zk/wslcheck"
+	"go.zakaria.org/wslcheck"
 	"testing"
 )
 
