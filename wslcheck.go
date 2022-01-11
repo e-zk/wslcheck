@@ -1,5 +1,5 @@
-// The wslcheck package provides a simple function that checks whether the
-// current Linux environment is in fact the Windows Subsystem for Linux (WSL).
+// The wslcheck package provides a simple way to check whether the current
+// Linux environment is in fact the Windows Subsystem for Linux (WSL).
 package wslcheck
 
 import (
