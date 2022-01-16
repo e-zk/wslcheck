@@ -8,7 +8,7 @@ This module works by checking the contents of `/proc/sys/kernel/osrelease`.
 ## Usage
 
 ```console
-$ go get github.com/e-zk/wslcheck
+$ go get go.zakaria.org/wslcheck
 ```
 
 ```go
